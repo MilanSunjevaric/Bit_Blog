@@ -32,11 +32,32 @@
 
 }
 .blogone{
-  color: rgb(230, 79, 79);
+  color: rgb(194, 180, 180);
   border: solid 5px black;
   border-left: none;
   padding-right: 5px;
 }
 nav{
   background: #405d9a;
+}
+
+.footer-copyright {
+  background-color: #405d9a;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin-top: 10px;
+}
+.post-header{
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+.main-div{
+  margin: 0 15%;
+  border-bottom: 2px solid gray;
 }
