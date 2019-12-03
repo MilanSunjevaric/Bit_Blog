@@ -11,8 +11,8 @@ const Header = (props) => {
                 <a href="#" class="brand-logo">Bit <span class="blogone">BLOG</span></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li class="navbarli"><Link to='/'>Home</Link></li>
-                    <li class="navbarli"><Link to='/AuthorsListItem'>Authors</Link></li>
-                    <li class="navbarli"><Link to='/About'>About</Link></li>
+                    <li class="navbarli"><Link to='/authors'>Authors</Link></li>
+                    <li class="navbarli"><Link to='/about'>About</Link></li>
                 </ul>
             </div>
         </nav>
