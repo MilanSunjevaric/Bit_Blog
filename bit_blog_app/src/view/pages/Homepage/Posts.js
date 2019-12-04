@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { fetchPost } from '../../../service/PostService'
+import { fetchPosts } from '../../../service/PostService'
 import Post from '../../../model/Post'
 
 class Posts extends React.Component {
@@ -9,20 +9,15 @@ class Posts extends React.Component {
 
         this.state = {
             posts: []
-
         }
-
     }
+
     componentDidMount() {
-        fetchPost()
-            .then(postovi => {
-                this.setState({ posts: postovi })
-                console.log(postovi);
-
-            })
+        fetchPosts()
+            .then(postovi => this.setState({ posts: postovi }))
     }
-    render() {
 
+    render() {
         const filteredPosts = this.state.posts.map(post => (
             <li>
                 <h3 className="postTitle"><Link to={`/post/${post.titleID}`}>{post.title}</Link></h3>
