@@ -24,6 +24,7 @@
   padding: 5px;
   line-height: 50px;
   margin-right: 1em;
+
 }
 .brand-logo{
   line-height: 60px;
@@ -36,6 +37,9 @@
   border: solid 5px black;
   border-left: none;
   padding-right: 5px;
+  background: url(http://apod.nasa.gov/apod/image/0603/coma_misti.jpg)-50px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 nav{
   background: #405d9a;
@@ -55,12 +59,58 @@ nav{
   
 }
 
-.post-header{
-  text-align: center;
-  font-size: 40px;
-  font-weight: bold;
-}
+
 .main-div{
   margin: 0 15%;
   border-bottom: 2px solid gray;
+}
+
+.postTitle a {
+  font-size: 1em;
+  color: royalblue;
+  display: block;
+}
+.postTitle a:hover{
+  background: url(http://apod.nasa.gov/apod/image/0603/coma_misti.jpg);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  
+}
+.titleBody{
+  font-size: 20px;
+  text-align: justify;
+  padding-bottom:20px ;
+  border-bottom: 1px solid gray;
+  color: white;
+}
+
+/* Post animation */
+.knockout {
+  background: url(http://apod.nasa.gov/apod/image/0603/coma_misti.jpg) -80px -80px;
+  color: red;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-weight: bold;
+  font-size: 100px;
+  font-family: arial, helvetica;
+  width: 600px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+body{
+  background:			#787878;
+}
+
+.about{
+  color: white;
+  text-align: center;
+  margin: 0 15%;
+}
+.our-story-par{
+  margin-bottom: 5%;
+}
+
+.about-heading:hover,.our-story-heading:hover{
+  color: #405d9a;
 }

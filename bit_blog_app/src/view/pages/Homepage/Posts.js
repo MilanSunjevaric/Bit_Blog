@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { fetchPost } from '../../../service/PostService'
+import Post from '../../../model/Post'
 
 class Posts extends React.Component {
     constructor(props) {
@@ -21,14 +22,21 @@ class Posts extends React.Component {
             })
     }
     render() {
+
+        const filteredPosts = this.state.posts.map(post => (
+            <li>
+                <h3 className="postTitle"><Link to={`/post/${post.titleID}`}>{post.title}</Link></h3>
+                <p className="titleBody">{post.body}</p>
+
+            </li>
+
+        ))
+
+
+
         return (<div className="main-div">
             <ul className="ul-posts">
-                <li>
-
-                    <h3><Link to='/post/'>{this.state.posts.title}</Link></h3>
-                    <p>lorem ipsum dolor sit amet, consectetur adipscing elit...</p>
-                    <p> {this.state.posts.title}</p>
-                </li>
+                {filteredPosts}
             </ul>
         </div>)
     }

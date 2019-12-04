@@ -1,22 +1,49 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { fetchAuthor } from '../../../service/AuthorService'
+
+
+class Authors extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            authors: []
+
+        }
+
+    }
+
+    componentDidMount() {
+        fetchAuthor()
+            .then(autori => {
+                this.setState({ authors: autori })
+                console.log(autori);
+
+            })
+    }
+    render() {
+
+        const filteredAuthors = this.state.authors.map(author => (
+
+
+            <li>
+                <h3 className="postTitle"><Link to={`/author/${author.id}`}>{author.name}</Link></h3>
+            </li >
+
+        ))
 
 
 
-const Authors = (props) => {
-
-    return (
-        <div>
-            <h1>Authors</h1>
-
-            <Link to="/author/1">ldkjf sdflkj</Link>
-            <Link to="/author/2">ldkjf sdflkj</Link>
-            <Link to="/author/3">ldkjf sdflkj</Link>
-            <Link to="/author/4">ldkjf sdflkj</Link>
-            <Link to="/author/5">ldkjf sdflkj</Link>
-        </div>
-
-    )
+        return (
+            <div className="main-div">
+                <div class="knockout">Authors</div>
+                <ul className="ul-posts">
+                    {filteredAuthors}
+                </ul>
+            </div>)
+    }
 }
+
 
 export default Authors

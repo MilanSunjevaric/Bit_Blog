@@ -4,7 +4,7 @@ class Post {
         this.userID = postData.userId;
         this.titleID = postData.id;
         this.title = postData.title;
-        this.description = postData.body;
+        this.body = postData.body;
     }
 }
 export default Post

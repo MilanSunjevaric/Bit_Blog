@@ -5,12 +5,13 @@ import Company from './Company'
 import { Link } from 'react-router-dom'
 
 
+
 const SingleAuthor = (props) => {
 
     return (
 
         <div>
-            <p><Link to='/Authors'>All authors</Link></p>
+            <p><Link to='/authors'>All authors</Link></p>
             <NameSurname />
             <Address />
             <Company />

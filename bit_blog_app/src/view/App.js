@@ -9,6 +9,7 @@ import Main from './pages/Homepage/Main'
 import SinglePost from './pages/Post/SinglePost'
 import SingleAuthor from './pages/Author/SingleAuthor';
 
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -27,7 +28,7 @@ class App extends React.Component {
 
         <Switch>
           <Route exact path='/authors' component={Authors} />
-          <Route exact path='/author/:id' component={SingleAuthor} />
+          <Route exact path='/author/:id' /*{`/author/${author.id}`}*/ component={SingleAuthor} />
           <Route exact path='/post/:id' component={SinglePost} />
           <Route exact path='/' component={Main} />
           <Route exact path='/about' component={About} />
@@ -39,3 +40,4 @@ class App extends React.Component {
 }
 
 export default App;
+// `/author/${author.id}`

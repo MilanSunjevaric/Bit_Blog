@@ -1,4 +1,4 @@
-import AuthorService from "../model/Post"
+import Author from '../model/Author'
 
 const fetchAuthor = () => {
     const url = "https://jsonplaceholder.typicode.com/users"
@@ -8,7 +8,7 @@ const fetchAuthor = () => {
         .then(data => {
 
             const MyAuthor = data.map(authorData => {
-                return new Post(authorData)
+                return new Author(authorData)
             })
             return MyAuthor
         }))
@@ -16,4 +16,4 @@ const fetchAuthor = () => {
 
 }
 
-export default AuthorService
+export { fetchAuthor }

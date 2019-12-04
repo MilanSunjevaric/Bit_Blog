@@ -8,9 +8,9 @@ class Author {
         this.email = authorData.email;
         this.website = authorData.website;
 
-        this.address = new Address(apiAddress);
+        // this.address = new Address(apiAddress);
 
-        this.company = new Company(apiCompany)
+        // this.company = new Company(apiCompany);
 
     }
 }
@@ -22,14 +22,14 @@ class Address {
         this.zip = apiAddress.zipcode;
         this.latitude = apiAddress.geo.lat;
         this.longitude = apiAddress.geo.lng;
-        this.phone = authorData.phone;
+        this.phone = apiAddress.phone;
     }
 }
 
 class Company {
     constructor(apiCompany) {
-        this.companyname = apiCompany.name
-        this.companyslogan = apiCompany.catchPhrase
+        this.companyname = apiCompany.name;
+        this.companyslogan = apiCompany.catchPhrase;
 
     }
 }
