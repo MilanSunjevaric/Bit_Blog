@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { fetchPost } from '../../../service/PostService'
+import { fetchPost, fetchMorePosts } from '../../../service/PostService'
 import { fetchAuthor } from '../../../service/AuthorService'
-import { fetchMorePosts } from '../../../service/PostService'
 import MorePosts from './MorePosts'
 
 
@@ -18,10 +17,10 @@ class SinglePosts extends React.Component {
         this.state = {
             post: null,
             author: null,
-            morePost: null
-
+            morePost: []
 
         }
+
 
     }
 
@@ -48,17 +47,20 @@ class SinglePosts extends React.Component {
             return <h2>Loading...</h2>;
         }
 
+
+
         return (<div className="main-div">
             <ul className="ul-posts">
                 <h2>SINGLE POST TITLE</h2>
                 <h3 className="postTitle"><Link to={`/author/${this.state.author.id}`}>{this.state.author.name}</Link></h3>
                 <h2>{this.state.post.title}</h2>
                 <div>
-                    <MorePosts />
+                    <MorePosts more={this.state.morePost} />
                 </div>
             </ul>
         </div>)
     }
 }
+
 
 export default SinglePosts

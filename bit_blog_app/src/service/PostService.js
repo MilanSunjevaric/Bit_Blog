@@ -13,12 +13,26 @@ const fetchPost = (id) => {
 }
 
 
-const fetchMorePosts = (userId) => {
-    const url = `https://jsonplaceholder.typicode.com/posts/${userId}`
+const fetchPosts = () => {
+    const url = "https://jsonplaceholder.typicode.com/posts"
 
     return fetch(url)
         .then(res => res.json())
         .then(apiPosts => {
+            return apiPosts.map(apiPost => {
+                return new Post(apiPost)
+
+            })
+        })
+}
+
+const fetchMorePosts = (userId) => {
+    const url = `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
+
+    return fetch(url)
+        .then(res => res.json())
+        .then(apiPosts => {
+
             return apiPosts.map(apiPost => {
                 return new Post(apiPost)
 
