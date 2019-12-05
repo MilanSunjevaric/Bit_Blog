@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { fetchAuthor } from '../../../service/AuthorService'
+import { fetchAuthors } from '../../../service/AuthorsService'
 
 
 class Authors extends React.Component {
@@ -15,7 +15,7 @@ class Authors extends React.Component {
     }
 
     componentDidMount() {
-        fetchAuthor()
+        fetchAuthors()
             .then(autori => {
                 this.setState({ authors: autori })
                 console.log(autori);

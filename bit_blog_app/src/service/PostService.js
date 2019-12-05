@@ -13,8 +13,8 @@ const fetchPost = (id) => {
 }
 
 
-const fetchPosts = () => {
-    const url = "https://jsonplaceholder.typicode.com/posts"
+const fetchMorePosts = (userId) => {
+    const url = `https://jsonplaceholder.typicode.com/posts/${userId}`
 
     return fetch(url)
         .then(res => res.json())
@@ -27,4 +27,5 @@ const fetchPosts = () => {
 }
 
 
-export { fetchPost, fetchPosts }
+
+export { fetchPost, fetchPosts, fetchMorePosts }

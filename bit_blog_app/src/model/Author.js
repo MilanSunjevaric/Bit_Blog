@@ -7,30 +7,18 @@ class Author {
         this.username = authorData.username;
         this.email = authorData.email;
         this.website = authorData.website;
+        this.street = authorData.address.street;
+        this.city = authorData.address.city;
+        this.zip = authorData.address.zipcode;
+        this.latitude = authorData.address.geo.lat;
+        this.longitude = authorData.address.geo.lng;
+        this.phone = authorData.phone;
+        this.companyName = authorData.company.name;
+        this.companySlogan = authorData.company.catchPhrase;
 
-        // this.address = new Address(apiAddress);
-
-        // this.company = new Company(apiCompany);
-
-    }
-}
-
-class Address {
-    constructor(apiAddress) {
-        this.street = apiAddress.street;
-        this.city = apiAddress.city;
-        this.zip = apiAddress.zipcode;
-        this.latitude = apiAddress.geo.lat;
-        this.longitude = apiAddress.geo.lng;
-        this.phone = apiAddress.phone;
-    }
-}
-
-class Company {
-    constructor(apiCompany) {
-        this.companyname = apiCompany.name;
-        this.companyslogan = apiCompany.catchPhrase;
 
     }
 }
+
+
 export default Author

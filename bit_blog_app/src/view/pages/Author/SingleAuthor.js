@@ -7,48 +7,39 @@ import { fetchAuthor } from '../../../service/AuthorService'
 
 
 
-
 class SingleAuthor extends React.Component {
     constructor(props) {
         super(props)
 
+        this.authorId = this.props.match.params.id
+
         this.state = {
-            singleAuthor: []
-
+            jedanAutor: null
         }
-
     }
-    componentDidMount() {
-        fetchAuthor()
-            .then(jedanAutor => {
-                this.setState({ singleAuthor: jedanAutor })
-                console.log(jedanAutor);
 
+    componentDidMount() {
+        fetchAuthor(this.authorId)
+            .then(single => {
+                this.setState({ jedanAutor: single })
+                console.log(single);
             })
     }
     render() {
 
-        // const filteredAuthor = this.state.singleAuthor.map(post => (
-        //     <li>
-        //         <h3 className="postTitle"><Link to={`/post/${post.titleID}`}>{post.title}</Link></h3>
-        //         <p className="titleBody">{post.body}</p>
-
-        //     </li>
-
-        // ))
-
-
-
-        return (<div className="main-div">
+        if (!this.state.jedanAutor) {
+            return <h2>Loading...</h2>;
+        }
+        return (
             <div>
-                <p><Link to='/authors'>Single Author</Link></p>
-                <NameSurname />
-
-                <Address />
-                <Company />
+                <p><Link to='/authors'>All authors</Link></p>
+                <NameSurname this name={this.state.jedanAutor.name} username={this.state.jedanAutor.username} email={this.state.jedanAutor.email} phone={this.state.jedanAutor.phone} />
+                <Address street={this.state.jedanAutor.street} city={this.state.jedanAutor.city} zip={this.state.jedanAutor.zip} latitude={this.state.jedanAutor.latitude} longitude={this.state.jedanAutor.longitude} />
+                <Company companyName={this.state.jedanAutor.companyName} companySlogan={this.state.jedanAutor.companySlogan} />
 
             </div>
-        </div>)
+
+        )
     }
 }
 
@@ -60,7 +51,6 @@ class SingleAuthor extends React.Component {
 //         <div>
 //             <p><Link to='/authors'>All authors</Link></p>
 //             <NameSurname />
-
 //             <Address />
 //             <Company />
 

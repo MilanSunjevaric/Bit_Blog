@@ -114,3 +114,66 @@ body{
 .about-heading:hover,.our-story-heading:hover{
   color: #405d9a;
 }
+
+.nameHeader{
+  text-align: center;
+  color: white;
+}
+.nameHeader:hover{
+  color: #405d9a;
+  cursor: pointer;
+}
+
+.nameSurname{
+  margin-left: 1em;
+  color: white;
+ 
+
+}
+.nameSurname h3{
+border-bottom: 1px solid white;
+border-top: 1px solid white;
+display: inline;
+padding: 5px;
+}
+.nameSurname span{
+  color:#405d9a;
+  font-size: 20px;
+}
+.nameSurname p{
+  font-size: 20px;
+}
+.flexarino{
+  display: flex;
+}
+.flexDivOne{
+  width: 50%;
+  font-size: 20px;
+}
+.flexDivTwo{
+  width: 50%;
+}
+iframe{
+  width: 100%;
+  height: 100%;
+}
+.flexDivOne span{
+color: #405d9a;
+}
+.flexDivOne p{
+  margin-left: 20px;
+  color: white;
+}
+
+.address{
+  margin-bottom: 1em;
+}
+
+.compDiv{
+  margin-left: 1em;
+  color: white;
+  font-size: 20px;
+}
+.compDiv span{
+  color: #405d9a;
+}

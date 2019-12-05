@@ -22,7 +22,6 @@ class Posts extends React.Component {
             <li>
                 <h3 className="postTitle"><Link to={`/post/${post.titleID}`}>{post.title}</Link></h3>
                 <p className="titleBody">{post.body}</p>
-
             </li>
 
         ))
